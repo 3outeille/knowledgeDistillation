@@ -1,5 +1,7 @@
 ![Hinton Knowledge Distillation](/hintonKD.png)
 
+Test
+
 # Knowledge Distillation in PyTorch
 Simple PyTorch implementation of (Hinton) Knowledge Distillation and BaseDistiller class to easily extend to other distillation procedures as well. Knowledge distillation in the sense of Hinton et al. (2015) seek to transfer *knowledge* from a large pretrained model, *teacher*, to a smaller untrained model, *student*. If done correctly, one can obtain performance improvements over student models trained from scratch, and more recent adaptions of the knowledge distillation scheme has examples of students outperforming the teacher. More recent work has introduced different distillation losses, looked at different information to transfer from the teacher, and the size of the student amongst others.
 
