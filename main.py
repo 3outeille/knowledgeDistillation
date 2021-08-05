@@ -157,5 +157,9 @@ def eval(test_loader, modelname="teacher"):
 if __name__ == "__main__":
     train_loader, val_loader, test_loader = load_mnist(download=False)
 
+    print("remove use of hook")
     train(train_loader, val_loader)
     eval(test_loader, modelname="student")
+
+    # TO DO
+    # Add temperature

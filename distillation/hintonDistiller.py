@@ -43,12 +43,12 @@ class HintonDistiller(BaseDistiller):
             tLogits = teacher(data)
             
             # Retrieve activations from distillation layer of both models
-            sAct = self.studentHook.val()
-            tAct = self.teacherHook.val()
+            # sAct = self.studentHook.val()
+            # tAct = self.teacherHook.val()
             
             # Calculate loss
             optimizer.zero_grad()
-            batchLoss = (1-self.alpha)*distillObjective(nn.functional.log_softmax(sAct, dim=1), nn.functional.softmax(tAct, dim=1))
+            batchLoss = (1-self.alpha)*distillObjective(nn.functional.log_softmax(sLogits, dim=1), nn.functional.softmax(tLogits, dim=1))
             batchLoss += self.alpha*objective(nn.functional.log_softmax(sLogits, dim=1), target)
 
             # Update student weights
